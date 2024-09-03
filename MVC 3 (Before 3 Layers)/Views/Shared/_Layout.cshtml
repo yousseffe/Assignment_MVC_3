@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Title</title>
+	<link href="~/Lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+	@*Start Header*@
+	<nav>
+		<center>
+			<a href="/Home/Index/" class="btn btn-primary">Home</a>
+			<a href="/Home/AboutUs/" class="btn btn-warning">About Us</a>
+			<a href="/Home/Privacy/" class="btn btn-success">Privacy</a>
+			<a href="/Home/ContactUs/" class="btn btn-light">Contact Us</a>
+			<a href="/Account/Login/" class="btn btn-danger">Login</a>
+
+			<!--1.HTML Tags-->
+			<a href="/Account/Register/" class="btn btn-info">Register</a>
+
+			<!--2. HTML Helpers-->
+			@* @Html.ActionLink("Home" , "Index" , "Home" , null , new{@class = "btn btn-primary"}) *@
+
+			<!--3. Tag Helpers-->
+			@* <a asp-controller="Home" asp-action="Index" class="btn btn-primary"></a> *@
+
+		</center>
+	</nav>
+	@*End Header*@
+
+	@RenderBody()
+
+	@*Start Footer*@
+	<footer>
+		<center>
+			<div>
+				<p>Copyrights &copy; for Route @DateTime.Now.Year</p>
+			</div>
+		</center>
+	</footer>
+	@*End Footer*@
+
+</body>
+</html>
